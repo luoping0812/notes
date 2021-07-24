@@ -1,0 +1,5 @@
+site_name: Luo's Notes
+theme: readthedocs
+pages:
+  - Home: home.md
+  - About: about.md
