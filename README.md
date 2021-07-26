@@ -1,7 +1,5 @@
 # notes
 
-http://itsluo.github.io/notes
+http://itsluo.github.io
 
-
-
-> sudo python3 -m pip install mkdocs python-markdown-math
+> sudo python3 -m pip install mkdocs
