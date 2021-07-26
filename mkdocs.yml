@@ -2,4 +2,5 @@ site_name: Luo's Notes
 theme: readthedocs
 pages:
   - Home: index.md
+  - vim: vim.md
   - About: about.md
