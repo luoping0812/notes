@@ -28,6 +28,13 @@
 - `:tabnew file` - tab
 - `gt` - 切换
 
+## 文本对象
+- `[number]<command>[text objext]` - number: 次数， command: d(delete)/c(change)/y(yank), text object: 单词w/句子s/段落p
+```
+iw: inner word, 如果键入viw命令，首先v进入选择模式，然后iw将选中当前单词
+aw: a word, 不但选中单词，但会包含单词前后的空格
+```
+
 ## 复制粘贴与寄存器
 - `set paste` 
 - `set nopaste` 
