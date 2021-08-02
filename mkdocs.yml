@@ -1,6 +1,6 @@
-site_name: Luo's Notes
+site_name: Luo的学习笔记
 theme: readthedocs
 pages:
-  - Home: index.md
-  - vim: vim.md
-  - About: about.md
+  - 简介: index.md
+  - 开发软件: 
+      - vim: vim.md
