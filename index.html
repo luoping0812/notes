@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Luo's Notes</title>
+  <title>Luo的学习笔记</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Home";
+    var mkdocs_page_name = "\u7b80\u4ecb";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = null;
   </script>
@@ -37,7 +37,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> Luo's Notes</a>
+        <a href="." class="icon icon-home"> Luo的学习笔记</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
@@ -47,17 +47,24 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">简介</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#makedown">Makedown</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mkdocs">MKDocs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">常用命令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">目录结构</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                 </ul>
+                <p class="caption"><span class="caption-text">开发软件</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="vim/">vim</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
                     </li>
                 </ul>
       </div>
@@ -69,7 +76,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">Luo's Notes</a>
+        <a href=".">Luo的学习笔记</a>
       </nav>
 
       
@@ -81,7 +88,7 @@
     
       
     
-    <li>Home</li>
+    <li>简介</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -93,7 +100,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-luos-notes">Welcome To Luo's Notes</h1>
+                <h1 id="luo">Luo的学习笔记</h1>
+<p>通过Makedown记录，MKDocs生成的学习笔记</p>
+<h2 id="makedown">Makedown</h2>
+<blockquote>
+<p>http://xianbai.me/learn-md/article/about/readme.html</p>
+</blockquote>
+<h2 id="mkdocs">MKDocs</h2>
+<blockquote>
+<p>https://www.mkdocs.org/</p>
+</blockquote>
+<h3 id="_1">常用命令</h3>
+<ul>
+<li><code>mkdocs new [dir-name]</code> - 创建mkdocs工程.</li>
+<li><code>mkdocs serve</code> - 启动mkdocs服务，地址：<strong>127.0.0.1:8000</strong> </li>
+<li><code>mkdocs build</code> - 构建文档.</li>
+<li><code>mkdocs gh-deploy</code> - 构建，并提交文档到<code>github</code>的gh-pages分支.</li>
+<li><code>mkdocs gh-deploy --config-file ../notes/mkdocs.yml</code> - 在<code>itsluo.github.io</code>仓库目录下执行，部署到github </li>
+</ul>
+<h3 id="_2">目录结构</h3>
+<pre><code>mkdocs.yml    # 配置文件.
+docs/
+    index.md  # 主页.
+    ...        
+
+</code></pre>
               
             </div>
           </div>
@@ -148,5 +179,5 @@
 
 <!--
 MkDocs version : 1.2.2
-Build Date UTC : 2021-07-29 04:47:09.523716+00:00
+Build Date UTC : 2021-08-02 12:24:04.428922+00:00
 -->
