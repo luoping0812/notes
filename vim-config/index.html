@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>vim-config - Luo's notes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "vim-config";
+    var mkdocs_page_input_path = "vim-config.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Luo's notes</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">简介</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">开发软件</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../vim/">vim</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">vim-config</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requirement">requirement</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#config">config</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Luo's notes</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>开发软件 &raquo;</li>
+        
+      
+    
+    <li>vim-config</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vim-config">vim-config</h1>
+<h2 id="requirement">requirement</h2>
+<pre><code>curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+</code></pre>
+<h2 id="config">config</h2>
+<pre><code>&quot; 基本设置
+set number
+&quot; 语法高亮 
+syntax on
+&quot; 主题
+colorscheme default
+&quot; 搜索高亮
+set hlsearch
+
+&quot; tab 空格的长度，默认8
+set tabstop=4
+&quot; 表示在编辑模式的时候按退格键的时候退回缩进的长度，当使用 expandtab时特别有用。
+set softtabstop=4
+&quot; 表示每一级缩进的长度
+set shiftwidth=4
+&quot; 当设置成 expandtab 时，缩进用空格来表示，noexpandtab 则是用制表符表示一个缩进
+set expandtab
+
+let mapleader=','
+let g:mapleader=','
+
+inoremap &lt;leader&gt;w &lt;Esc&gt;:w&lt;cr&gt;
+inoremap jj &lt;Esc&gt; 
+inoremap zz &lt;Esc&gt;:wq&lt;cr&gt; 
+
+&quot; 窗口切换
+noremap &lt;C-h&gt; &lt;C-w&gt;h
+noremap &lt;C-j&gt; &lt;C-w&gt;j
+noremap &lt;C-k&gt; &lt;C-w&gt;k
+noremap &lt;C-l&gt; &lt;C-w&gt;l
+
+&quot; buffer切换
+nnoremap &lt;silent&gt; [b :bprevious&lt;cr&gt;
+nnoremap &lt;silent&gt; [n :bnext&lt;CR&gt;
+
+autocmd BufNewFile *.[ch],*.hpp,*.cpp exec &quot;:call SetTitle()&quot; 
+func SetComment()
+    call setline(1,&quot;/********************************************************&quot;) 
+    call append(line(&quot;.&quot;),   &quot;*   Copyright (C) &quot;.strftime(&quot;%Y&quot;).&quot; All rights reserved.&quot;)
+    call append(line(&quot;.&quot;)+1, &quot;*   &quot;) 
+    call append(line(&quot;.&quot;)+2, &quot;*   Filename:&quot;.expand(&quot;%:t&quot;)) 
+    call append(line(&quot;.&quot;)+3, &quot;*   Author  :itsluo&quot;)
+    call append(line(&quot;.&quot;)+4, &quot;*   Date    :&quot;.strftime(&quot;%Y-%m-%d&quot;)) 
+    call append(line(&quot;.&quot;)+5, &quot;*   Describe:&quot;) 
+    call append(line(&quot;.&quot;)+6, &quot;*&quot;)
+    call append(line(&quot;.&quot;)+7, &quot;********************************************************/&quot;) 
+endfunc
+
+func SetTitle()
+    call SetComment()
+    if expand(&quot;%:t:r&quot;) == 'main'
+        return
+    endif
+
+    if expand(&quot;%:e&quot;) == 'h' 
+        call append(line(&quot;.&quot;)+8, &quot;#ifndef &quot;.toupper(expand(&quot;%:t:r&quot;)).&quot;_h&quot;) 
+        call append(line(&quot;.&quot;)+9, &quot;#define &quot;.toupper(expand(&quot;%:t:r&quot;)).&quot;_h&quot;) 
+        call append(line(&quot;.&quot;)+10,&quot; &quot;) 
+        call append(line(&quot;.&quot;)+11, &quot;#endif&quot;) 
+        call append(line(&quot;.&quot;)+12, &quot;#endif //&quot;.toupper(expand(&quot;%:t:r&quot;)).&quot;_h&quot;) 
+    elseif &amp;filetype == 'c'|| &amp;filetype == 'cpp' 
+        call append(line(&quot;.&quot;)+8, &quot;#include \&quot;&quot;.expand(&quot;%:t:r&quot;).&quot;.h\&quot;&quot;) 
+    endif
+endfunc
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+&quot;Plug 'python-mode/python-mode'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+&quot; Use release branch (recommend)
+&quot;Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+&quot;Plug 'pechorin/any-jump.vim'
+Plug 'preservim/tagbar'
+&quot;Plug 'universal-ctags/ctags'
+&quot;Plug 'sbdchd/neoformat'
+Plug 'chiel92/vim-autoformat'
+Plug 'rhysd/vim-clang-format'
+Plug 'dense-analysis/ale'
+Plug 'ludovicchabant/vim-gutentags' 
+call plug#end()
+
+
+nnoremap &lt;leader&gt;v :NERDTreeFind&lt;cr&gt;
+nnoremap &lt;leader&gt;g :NERDTreeToggle&lt;cr&gt;
+nnoremap &lt;leader&gt;t :TagbarToggle&lt;cr&gt;
+nnoremap &lt;Leader&gt;f :Autoformat&lt;CR&gt;
+
+let g:deoplete#enable_at_startup = 1
+
+let g:clang_format#style_options = {
+            \ &quot;AccessModifierOffset&quot; : -4,
+            \ &quot;AllowShortIfStatementsOnASingleLine&quot; : &quot;true&quot;,
+            \ &quot;AlwaysBreakTemplateDeclarations&quot; : &quot;true&quot;,
+            \ &quot;Standard&quot; : &quot;C++11&quot;}
+
+set tags=./.tags;,.tags
+&quot; gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
+let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+&quot; 所生成的数据文件的名称
+let g:gutentags_ctags_tagfile = '.tags'
+&quot; 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
+let s:vim_tags = expand('~/.cache/tags')
+let g:gutentags_cache_dir = s:vim_tags
+&quot; 配置 ctags 的参数
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+&quot; 检测 ~/.cache/tags 不存在就新建
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+&quot; map to &lt;Leader&gt;cf in C++ code
+&quot;autocmd FileType c,cpp,objc nnoremap &lt;buffer&gt;&lt;Leader&gt;cf :&lt;C-u&gt;ClangFormat&lt;CR&gt;
+&quot;autocmd FileType c,cpp,objc vnoremap &lt;buffer&gt;&lt;Leader&gt;cf :ClangFormat&lt;CR&gt;
+&quot; if you install vim-operator-user
+&quot;autocmd FileType c,cpp,objc map &lt;buffer&gt;&lt;Leader&gt;x &lt;Plug&gt;(operator-clang-format)
+&quot; Toggle auto formatting:
+&quot;nmap &lt;Leader&gt;C :ClangFormatAutoToggle&lt;CR&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../vim/" class="btn btn-neutral" title="vim"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../vim/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
