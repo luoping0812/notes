@@ -3,3 +3,4 @@ theme: readthedocs
 pages:
   - 简介: index.md
   - vim: vim.md
+  - gdb: gdb.md
