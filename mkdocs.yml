@@ -2,5 +2,4 @@ site_name: Luo的学习笔记
 theme: readthedocs
 pages:
   - 简介: index.md
-  - 开发软件: 
-      - vim: vim.md
+  - vim: vim.md
