@@ -1,6 +1,4 @@
-site_name: Luo的学习笔记
+site_name: 学习笔记
 theme: readthedocs
 pages:
   - 简介: index.md
-  - vim: vim.md
-  - gdb: gdb.md
