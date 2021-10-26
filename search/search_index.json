@@ -1,1 +1,1 @@
-{"config":{"indexing":"full","lang":["en"],"min_search_length":3,"prebuild_index":false,"separator":"[\\s\\-]+"},"docs":[{"location":"","text":"notes stay hungry stay foolish.","title":"notes"},{"location":"#notes","text":"stay hungry stay foolish.","title":"notes"}]}
+{"config":{"indexing":"full","lang":["en"],"min_search_length":3,"prebuild_index":false,"separator":"[\\s\\-]+"},"docs":[{"location":"","text":"notes stay hungry stay foolish.","title":"\u7b80\u4ecb"},{"location":"#notes","text":"stay hungry stay foolish.","title":"notes"}]}
